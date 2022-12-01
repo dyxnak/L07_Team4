@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>jQuery and Bootstrap Exercises</title>
+    <style>
+        body {
+            margin: 100px;
+        }
+
+        .circle, .square {
+            width: 90px;
+            aspect-ratio: 1;
+            border-radius: 100%;
+            background: dodgerblue;
+        }
+
+        .square {
+            border-radius: 0;
+            background: slateblue;
+        }
+
+        .box {
+            background: #ddd;
+            width: 114px;
+            aspect-ratio: 1;
+            padding: 10px;
+            border: 2px dashed #aaa;
+        }
+
+        .main{
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+  <p>
+    Mirza
+  </p>
+    <!-- TODO 1: Add tooltip -->
+    <button type="button" class="btn btn-warning btn-lg mb-5" data-toggle="tooltip"  title="this is a button">Button</button>
+<p>Dayana</p>
+    <div class="circle mb-5"></div>
+<p>Jayden</p>
+    <div class="square mb-2"></div>
+    <button type="button" class="btn-sm btn-dark mb-4 btn-add" id="button2">Add</button>
+    <div class="box"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            // Initialise tooltips
+            $('[data-bs-toggle="tooltip"]').tooltip();
+            // Dayana
+            // TODO 2: Add toggle function
+            $(".circle").click(function(){
+            $(".circle").toggleClass("main");
+            }); 
+            // Jayden
+            // TODO 3: Clone square and append to grey box
+            $(document).ready(function(){
+                $("button").click(function(){
+                $(".square:first").clone().appendTo(".box");
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="javascript:void(0)">SOI Learning Portal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Courses
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Contact</a>
+          </li>
+          <form class="d-flex">
+            <input class="form-control me-2" type="text" placeholder="Search">
+            <button class="btn btn-primary" type="button">Search</button>
+          </form>
+        </ul>
+        <i class="fa-solid fa-bell fa-2x" style="color:white; padding-right: 2%;" >  </i>  
+        <i class="fa-solid fa-user fa-2x " style="color:white; padding-right: 2%;"></i>
+      </div>
+    </div>
+  </nav>
